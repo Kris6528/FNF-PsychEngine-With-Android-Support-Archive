@@ -34,13 +34,13 @@ class MainMenuState extends MusicBeatState
 	private var camAchievement:FlxCamera;
 	
 	var optionShit:Array<String> = [
-		//'story_mode',
+		'story_mode',
 		'freeplay',
 		//#if MODS_ALLOWED 'mods', #end
 		//#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'credits',
 		//#if !switch 'donate', #end
-		'options'
+		'options',
 	];
 
 	var magenta:FlxSprite;
@@ -214,6 +214,10 @@ class MainMenuState extends MusicBeatState
 				{
 					CoolUtil.browserLoad('https://ninja-muffin24.itch.io/funkin');
 				}
+				else if (optionShit[curSelected]) == 'story_mode'
+				{
+					CoolUtil.browserLoad('https://youtu.be/dQw4w9WgXcQ');
+				}
 				else
 				{
 					selectedSomethin = true;
@@ -241,8 +245,8 @@ class MainMenuState extends MusicBeatState
 
 								switch (daChoice)
 								{
-									//case 'story_mode':
-										//MusicBeatState.switchState(new StoryMenuState());
+									case 'story_mode':
+										MusicBeatState.switchState(new StoryMenuState());
 									case 'freeplay':
 										MusicBeatState.switchState(new FreeplayState());
 									//#if MODS_ALLOWED
