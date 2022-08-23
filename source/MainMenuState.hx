@@ -83,10 +83,10 @@ class MainMenuState extends MusicBeatState
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 
-		/*camFollow = new FlxObject(0, 0, 1, 1);
+		camFollow = new FlxObject(0, 0, 1, 1);
 		camFollowPos = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
-		add(camFollowPos);*/
+		add(camFollowPos);
 
 		magenta = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
 		//magenta.scrollFactor.set(0, 0);
