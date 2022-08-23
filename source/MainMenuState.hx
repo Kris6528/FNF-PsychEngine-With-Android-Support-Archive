@@ -214,7 +214,7 @@ class MainMenuState extends MusicBeatState
 				{
 					CoolUtil.browserLoad('https://ninja-muffin24.itch.io/funkin');
 				}
-				else if (optionShit[curSelected]) == 'story_mode')
+				else if (optionShit[curSelected] == 'story_mode')
 				{
 					CoolUtil.browserLoad('https://youtu.be/dQw4w9WgXcQ');
 				}
