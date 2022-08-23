@@ -75,23 +75,23 @@ class MainMenuState extends MusicBeatState
 		persistentUpdate = persistentDraw = true;
 
 		//var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
-		var bg:FlxSprite = new FlxSprite(0).loadGraphic(Paths.image('menuBG'));
-		//bg.scrollFactor.set(0, yScroll);
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuBG'));
+		//bg.scrollFactor.set(0, 0);
 		//bg.setGraphicSize(Std.int(bg.width * 1.175)); //orig size 1.175 * bg.width
-		bg.updateHitbox();
+		//bg.updateHitbox();
 		bg.screenCenter();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 
-		camFollow = new FlxObject(0, 0, 1, 1);
+		/*camFollow = new FlxObject(0, 0, 1, 1);
 		camFollowPos = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
-		add(camFollowPos);
+		add(camFollowPos);*/
 
-		magenta = new FlxSprite(0).loadGraphic(Paths.image('menuDesat'));
-		//magenta.scrollFactor.set(0, yScroll);
+		magenta = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		//magenta.scrollFactor.set(0, 0);
 		//magenta.setGraphicSize(Std.int(magenta.width * 1.175));
-		magenta.updateHitbox();
+		//magenta.updateHitbox();
 		magenta.screenCenter();
 		magenta.visible = false;
 		magenta.antialiasing = ClientPrefs.globalAntialiasing;
