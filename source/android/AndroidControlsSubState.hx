@@ -2,6 +2,7 @@ package android;
 
 import android.flixel.FlxButton;
 import android.flixel.FlxHitbox;
+
 import android.flixel.FlxVirtualPad;
 import flixel.FlxG;
 import flixel.FlxSprite;
@@ -19,7 +20,7 @@ import openfl.utils.Assets;
 
 class AndroidControlsSubState extends FlxSubState
 {
-	final controlsItems:Array<String> = ['Pad-Right', 'Pad-Left', 'Pad-Custom', 'Pad-Duo', 'Hitbox', 'Keyboard'];
+	final controlsItems:Array<String> = ['Pad-Right', 'Pad-Left', 'Pad-Custom', 'Pad-Duo', 'Hitbox', 'Keyboard', 'Hitbox Invisible'];
 	var virtualPad:FlxVirtualPad;
 	var hitbox:FlxHitbox;
 	var upPozition:FlxText;
@@ -34,6 +35,7 @@ class AndroidControlsSubState extends FlxSubState
 	var buttonBinded:Bool = false;
 	var bindButton:FlxButton;
 	var resetButton:FlxButton;
+	var alpha:Float = 1;
 
 	override function create()
 	{
@@ -70,6 +72,7 @@ class AndroidControlsSubState extends FlxSubState
 		hitbox = new FlxHitbox();
 		hitbox.visible = false;
 		add(hitbox);
+		
 
 		funitext = new FlxText(0, 50, 0, 'No Android Controls!', 32);
 		funitext.setFormat('VCR OSD Mono', 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -240,9 +243,14 @@ class AndroidControlsSubState extends FlxSubState
 			case 'Hitbox':
 				hitbox.visible = true;
 				virtualPad.visible = false;
+				hitbox.alpha = 1;
 			case 'Keyboard':
 				hitbox.visible = false;
 				virtualPad.visible = false;
+			case 'Hitbox Invisible':
+				hitbox.visible = true;
+				virtualPad.visible = false;
+				hitbox.alpha = 0;
 		}
 
 		funitext.visible = daChoice == 'Keyboard';
